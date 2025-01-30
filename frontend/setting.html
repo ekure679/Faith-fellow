@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Admin Settings</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        overflow-x: hidden;
+        margin: 0;
+      }
+
+      /* Navbar Styling */
+      nav {
+        height: 60px;
+        background-color: #4a90e2;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      nav .logo i {
+        margin-right: 10px;
+      }
+
+      nav .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      nav .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+
+      nav .menu a:hover {
+        color: #ffdd57;
+      }
+
+      nav .settings-btn {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      /* Settings Panel */
+      .settings-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+      }
+
+      .settings-panel.active {
+        right: 0;
+      }
+
+      .settings-panel h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #4a90e2;
+      }
+
+      .settings-panel .setting-group {
+        margin-bottom: 20px;
+      }
+
+      .settings-panel .setting-group h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .settings-panel .setting-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .settings-panel .setting-group input,
+      .settings-panel .setting-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .settings-panel .actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .settings-panel .actions button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .settings-panel .actions .save {
+        background-color: #4a90e2;
+        color: white;
+      }
+
+      .settings-panel .actions .save:hover {
+        background-color: #4179b5;
+      }
+
+      .settings-panel .actions .cancel {
+        background-color: #ff5c57;
+        color: white;
+      }
+
+      .settings-panel .actions .cancel:hover {
+        background-color: #e14a4a;
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          height: auto;
+          padding: 10px 20px;
+        }
+
+        nav .menu {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .settings-panel {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <a href="#" class="logo">
+          <i class="bx bx-code-alt"></i>
+          <div class="logo-name">AdminPanel</div>
+        </a>
+        <ul class="side-menu">
+          <li>
+            <a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-group"></i>Users</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-receipt"></i>Reports</a>
+          </li>
+          <li>
+            <a href="#" class="active"><i class="bx bx-cog"></i>Settings</a>
+          </li>
+          <li>
+            <a href="#" class="logout"
+              ><i class="bx bx-log-out-circle"></i>Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Navbar -->
+        <nav>
+          <i class="bx bx-menu" id="menu-icon"></i>
+          <span>Admin Settings</span>
+        </nav>
+
+        <!-- Settings Section -->
+        <div class="settings-container">
+          <h2>Settings</h2>
+
+          <!-- User Account Settings -->
+          <div class="settings-section">
+            <h3>User Account</h3>
+            <div class="setting-item">
+              <label for="profile-picture">Profile Picture</label>
+              <input type="file" id="profile-picture" />
+            </div>
+            <div class="setting-item">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="admin@example.com" />
+            </div>
+            <div class="setting-item">
+              <label for="password">Change Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter new password"
+              />
+            </div>
+          </div>
+
+          <!-- System Preferences -->
+          <div class="settings-section">
+            <h3>System Preferences</h3>
+            <div class="setting-item">
+              <label for="theme">Theme</label>
+              <select id="theme">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+            <div class="setting-item">
+              <label for="notifications">Notifications</label>
+              <input type="checkbox" id="notifications" checked />
+            </div>
+          </div>
+
+          <!-- Security Settings -->
+          <div class="settings-section">
+            <h3>Security</h3>
+            <div class="setting-item">
+              <label for="2fa">Two-Factor Authentication</label>
+              <input type="checkbox" id="2fa" />
+            </div>
+            <div class="setting-item">
+              <label for="session-management">Active Sessions</label>
+              <button id="session-management">Manage Sessions</button>
+            </div>
+          </div>
+
+          <!-- Save Button -->
+          <button class="save-settings">Save Changes</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const menuIcon = document.getElementById("menu-icon");
+      const sidebar = document.querySelector(".sidebar");
+      const mainContent = document.querySelector(".main-content");
+
+      menuIcon.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        mainContent.classList.toggle("shrink");
+      });
+
+      document.querySelector(".save-settings").addEventListener("click", () => {
+        alert("Settings saved successfully!");
+      });
+    </script>
+  </body>
+</html>

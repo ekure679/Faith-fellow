@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Faith Fellow Church Members/Leaders Login</title>
+    <style>
+      /* Same styling as before */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .logo-name {
+        font-size: 1.5rem;
+        color: #4caf50;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .breadcrumb {
+        font-size: 0.875rem;
+        color: #777;
+      }
+
+      .form-group {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.875rem;
+        color: #333;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .form-actions {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        font-size: 1.1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #45a049;
+      }
+
+      .form-footer {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .form-footer a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+
+      .form-footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo-name">
+          <i class="bx bx-church"></i>
+          <span>Faith Fellow</span>
+        </div>
+        <h1>Login to Your Dashboard</h1>
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          /
+          <li><a href="#" class="active">Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form">
+        <div class="form-group">
+          <label for="church-name">Church Name</label>
+          <input
+            type="text"
+            id="church-name"
+            name="church-name"
+            placeholder="Enter your church name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Login</button>
+        </div>
+      </form>
+
+      <!-- Footer Links -->
+      <div class="form-footer">
+        <a href="#">Forgot Password?</a> | <a href="#">Sign Up</a>
+      </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+<!-- if (users[churchName].password === password) {
+    // Redirect or embed content based on role
+    if (users[churchName].role === "/church-leader") {
+        loadDashboard('/churchleader.html'); // Load church leader's dashboard
+    } else {
+         window.location.href = "/churchleaders.html"; // Redirect to the church leader's dashboard  loadDashboard('/member.html'); // Load member's dashboard
+    }
+} else {
+    alert("Incorrect password. Please try again.");
+} -->

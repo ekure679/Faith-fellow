@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Faith Fellow Church Leaders Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-church'></i>
+            <div class="logo-name"><span>Faith</span>Fellow</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li class="active"><a href="#"><i class='bx bx-group'></i>Members</a></li>
+            <li><a href="#"><i class='bx bx-video'></i>Live Services</a></li>
+            <li><a href="#"><i class='bx bx-campaign'></i>Fundraising Campaigns</a></li>
+            <li><a href="#"><i class='bx bx-calendar-event'></i>Programs</a></li>
+            <li><a href="#"><i class='bx bx-bell'></i>Notifications</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="logout.html" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">5</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/church-leader-profile.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Church Leaders Dashboard</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">Overview</a></li>
+                        /
+                        <li><a href="#" class="active">Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bx-group'></i>
+                    <span class="info">
+                        <h3>320</h3>
+                        <p>Total Members</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-video'></i>
+                    <span class="info">
+                        <h3>5</h3>
+                        <p>Live Services This Week</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>$8,550</h3>
+                        <p>Total Funds Raised</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-calendar'></i>
+                    <span class="info">
+                        <h3>12</h3>
+                        <p>Upcoming Programs</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-campaign'></i>
+                        <h3>Recent Campaigns</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Campaign</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>Building Fund</p>
+                                </td>
+                                <td>20-01-2025</td>
+                                <td><span class="status completed">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Mission Outreach</p>
+                                </td>
+                                <td>18-01-2025</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Community Support</p>
+                                </td>
+                                <td>15-01-2025</td>
+                                <td><span class="status process">Inactive</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Live Services -->
+                <div class="reminders">
+                    <div class="header">
+                        <i class='bx bx-video'></i>
+                        <h3>Upcoming Live Services</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-plus'></i>
+                    </div>
+                    <ul class="task-list">
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Start Sunday Service - 25th Jan</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Plan Bible Study - 28th Jan</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Prepare Sermon - 30th Jan</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- End of Reminders-->
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

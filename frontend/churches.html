@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Faith Fellow - Manage Churches</title>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-church'></i>
+            <div class="logo-name"><span>Faith</span>Fellow</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="dashboard-admin.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li class="active"><a href="churches.html"><i class='bx bx-group'></i>Churches</a></li>
+            <li><a href="subsription.html"><i class='bx bx-money'></i>Subscriptions</a></li>
+            <li><a href="Reports.html"><i class='bx bx-bar-chart-alt'></i>Reports</a></li>
+            <li><a href="#"><i class='bx bx-user'></i>Users</a></li>
+            <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search Churches...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">5</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/admin-profile.png">
+            </a>
+        </nav>
+        <!-- End of Navbar -->
+
+        <main>
+            <!-- Header -->
+            <div class="header">
+                <div class="left">
+                    <h1>Church Management</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="churches.html">Dashboard</a></li>
+                        /
+                        <li><a href="dashboard-admin.html" class="active">Churches</a></li>
+                    </ul>
+                </div>
+                <div class="actions">
+                    <button class="btn add-church"><i class='bx bx-plus'></i> Add Church</button>
+                    <button class="btn export"><i class='bx bx-cloud-download'></i> Export Data</button>
+                </div>
+            </div>
+            <!-- End of Header -->
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bxs-church'></i>
+                    <span class="info">
+                        <h3>120</h3>
+                        <p>Total Churches</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-check-circle'></i>
+                    <span class="info">
+                        <h3>98</h3>
+                        <p>Active Churches</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-time'></i>
+                    <span class="info">
+                        <h3>15</h3>
+                        <p>Pending Churches</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-x-circle'></i>
+                    <span class="info">
+                        <h3>7</h3>
+                        <p>Inactive Churches</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            <!-- Churches Table -->
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-list-ul'></i>
+                        <h3>Churches List</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Church</th>
+                                <th>Location</th>
+                                <th>Date Added</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="images/church-1.png">
+                                    <p>Grace Fellowship</p>
+                                </td>
+                                <td>New York</td>
+                                <td>01-01-2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn view">View</button>
+                                    <button class="btn edit">Edit</button>
+                                    <button class="btn delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/church-2.png">
+                                    <p>Hope Baptist</p>
+                                </td>
+                                <td>Chicago</td>
+                                <td>15-12-2024</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="btn view">View</button>
+                                    <button class="btn edit">Edit</button>
+                                    <button class="btn delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/church-3.png">
+                                    <p>Faith Revival</p>
+                                </td>
+                                <td>Los Angeles</td>
+                                <td>20-11-2024</td>
+                                <td><span class="status inactive">Inactive</span></td>
+                                <td>
+                                    <button class="btn view">View</button>
+                                    <button class="btn edit">Edit</button>
+                                    <button class="btn delete">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Data Visualization -->
+                <div class="charts">
+                    <div class="chart">
+                        <h3>Subscription Plans</h3>
+                        <canvas id="subscriptionChart"></canvas>
+                    </div>
+                    <div class="chart">
+                        <h3>Active vs Inactive</h3>
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+                <!-- End of Data Visualization -->
+            </div>
+            <!-- End of Churches Table -->
+        </main>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        // Example charts initialization
+        // Initialize your charts here if needed
+    </script>
+</body>
+
+</html>

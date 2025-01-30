@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Add User | Admin Panel</title>
+    <style>
+        /* General Container Styling */
+        .add-user-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-user-container h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Form Styling */
+        .add-user-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .add-user-form label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .add-user-form input,
+        .add-user-form select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .add-user-form input:focus,
+        .add-user-form select:focus {
+            border-color: #4caf50;
+            outline: none;
+            box-shadow: 0 0 4px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Role Selector Styling */
+        .role-selector {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .role-selector label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .role-selector input[type="radio"] {
+            accent-color: #4caf50;
+        }
+
+        /* Submit Button Styling */
+        .add-user-form button {
+            padding: 0.75rem;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-user-form button:hover {
+            background-color: #45a049;
+        }
+
+        .add-user-form button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .add-user-container {
+                padding: 1.5rem;
+            }
+
+            .role-selector {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="add-user-container">
+        <div class="form-header">
+            <h2>Add New User</h2>
+            <p>Fill out the details below to create a new user.</p>
+        </div>
+        <form id="add-user-form" class="add-user-form">
+            <!-- User Information -->
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="profile-picture">Profile Picture</label>
+                <input type="file" id="profile-picture" accept="image/*">
+            </div>
+
+            <!-- Role Selection -->
+            <div class="form-group role-selector">
+                <label for="role">Role</label>
+                <select id="role" required>
+                    <option value="">Select a role</option>
+                    <option value="admin">Admin</option>
+                    <option value="church-leader">Church Leader</option>
+                    <option value="member">Member</option>
+                </select>
+            </div>
+
+            <!-- Church Association -->
+            <div class="form-group">
+                <label for="assign-church">Assign Church</label>
+                <select id="assign-church">
+                    <option value="">Select a church</option>
+                    <option value="church-1">Church 1</option>
+                    <option value="church-2">Church 2</option>
+                    <option value="church-3">Church 3</option>
+                </select>
+            </div>
+
+            <!-- Authentication Details -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm password" required>
+            </div>
+
+            <!-- Permissions and Preferences -->
+            <div class="form-group">
+                <label>Status</label>
+                <div class="status-toggle">
+                    <label>
+                        <input type="radio" name="status" value="active" checked> Active
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="inactive"> Inactive
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notifications">
+                    <input type="checkbox" id="notifications" checked> Receive Notifications
+                </label>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Add User</button>
+                <button type="reset" class="btn-reset">Reset</button>
+               <a href="user.html"> <button type="button" class="btn-cancel"><i class="bx bx-right-arrow" ></i>back</button></a>
+            </div>
+        </form>
+   

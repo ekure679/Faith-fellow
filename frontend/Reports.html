@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Admin Report</title>
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="#" class="logo">
+        <i class="bx bx-church"></i>
+        <div class="logo-name"><span>Faith</span>Fellow</div>
+      </a>
+      <ul class="side-menu">
+        <li>
+          <a href="dashboard-admin.html"><i class="bx bxs-dashboard"></i>Dashboard</a>
+        </li>
+        <li>
+          <a href="churches.html"><i class="bx bx-group"></i>Churches</a>
+        </li>
+        <li>
+          <a href="subsription.html"
+            ><i class="bx bx-money"></i>Subscriptions</a
+          >
+        </li>
+        <li class="active">
+          <a href="Reports.html"><i class="bx bx-bar-chart-alt"></i>Reports</a>
+        </li>
+        <li>
+          <a href="user.html"><i class="bx bx-user"></i>Users</a>
+        </li>
+        <li>
+          <a href="settings.html"><i class="bx bx-cog"></i>Settings</a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bx-log-out-circle"></i>
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Navbar -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button class="search-btn" type="submit">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="theme-toggle" hidden />
+        <label for="theme-toggle" class="theme-toggle"></label>
+        <a href="#" class="notif">
+          <i class="bx bx-bell"></i>
+          <span class="count">5</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="images/admin-profile.png" />
+        </a>
+      </nav>
+      <!-- End of Navbar -->
+
+      <main>
+        <div class="header">
+          <div class="left">
+            <h1>Reports</h1>
+            <ul class="breadcrumb">
+              <li><a href="dashboard.html">Overview</a></li>
+              /
+              <li><a href="#" class="active">Reports</a></li>
+            </ul>
+          </div>
+          <a href="#" class="report">
+            <i class="bx bx-cloud-download"></i>
+            <span>Download Full Report</span>
+          </a>
+        </div>
+
+        <!-- Insights Section -->
+         <h2 style="text-transform:capitalize ;" >key metrics summary</h2>
+        <ul class="insights">
+          <li>
+            <i class="bx bxs-church"></i>
+            <span class="info">
+              <h3>120</h3>
+              <p>Total Churches</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bx-user-check"></i>
+            <span class="info">
+              <h3>4,532</h3>
+              <p>Active Members</p>
+            </span>
+          </li>
+         
+          <li>
+            <i class="bx bx-dollar-circle"></i>
+            <span class="info">
+              <h3>$34,120</h3>
+              <p>Monthly Revenue</p>
+            </span>
+          </li>
+          <li>
+            <i class="bx bx-line-chart"></i>
+            <span class="info">
+              <h3>$412,900</h3>
+              <p>Yearly Revenue</p>
+            </span>
+          </li>
+          
+        </ul>
+        <!-- End of Insights Section -->
+
+        <!-- Charts Section -->
+        <div class="charts" id="theme-toggle">
+          <div id="theme-toggle" class="chart">
+            <h3>Monthly Revenue</h3>
+            <canvas id="monthlyRevenueChart"></canvas>
+          </div>
+          <div id="theme-toggle" class="chart">
+            <h3>Weekly Active Users</h3>
+            <canvas id="activeUsersChart"></canvas>
+          </div>
+          <div id="theme-toggle" class="chart">
+            <h3>Fundraising Performance</h3>
+            <canvas id="fundraisingChart"></canvas>
+          </div>
+        </div>
+        <!-- End of Charts Section -->
+        <!-- Filters -->
+        <section class="filters">
+          <h2>Filters</h2>
+          <div class="filters-group">
+            <input type="date" />
+            <input type="date" />
+            <input type="text" placeholder="Search by Church Name" />
+          </div>
+        </section>
+        <!-- Reports Table Section -->
+        <div class="bottom-data" id="theme-toggle">
+          <div class="orders">
+            <div class="header">
+                <i class="bx bx-receipt"></i>
+                <h3>Recent Transactions</h3>
+                <i class="bx bx-filter"></i>
+                <i class="bx bx-search"></i>
+              </div>
+              <table class="">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Church</th>
+                    <th>Transaction ID</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>22-01-2025</td>
+                    <td>Grace Fellowship</td>
+                    <td>#12345678</td>
+                    <td>$500</td>
+                    <td><span class="status completed">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td>20-01-2025</td>
+                    <td>Hope Baptist</td>
+                    <td>#23456789</td>
+                    <td>$1,200</td>
+                    <td><span class="status pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>18-01-2025</td>
+                    <td>Faith Revival</td>
+                    <td>#34567890</td>
+                    <td>$750</td>
+                    <td><span class="status failed">Failed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+        <!-- End of Reports Table Section -->
+      </main>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script>
+      // Sample data for charts (to be dynamically generated from backend in real use)
+      const monthlyRevenueChart = new Chart(
+        document.getElementById("monthlyRevenueChart"),
+        {
+          type: "bar",
+          data: {
+            labels: ["January", "February", "March", "April"],
+            datasets: [
+              {
+                label: "Revenue ($)",
+                data: [5000, 7000, 8000, 6500],
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+              },
+            ],
+          },
+        }
+      );
+
+      const activeUsersChart = new Chart(
+        document.getElementById("activeUsersChart"),
+        {
+          type: "line",
+          data: {
+            labels: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+            ],
+            datasets: [
+              {
+                label: "Active Users",
+                data: [120, 150, 130, 170, 200, 180, 190],
+                borderColor: "rgba(153, 102, 255, 1)",
+                backgroundColor: "rgba(153, 102, 255, 0.2)",
+                borderWidth: 1,
+              },
+            ],
+          },
+        }
+      );
+
+      const fundraisingChart = new Chart(
+        document.getElementById("fundraisingChart"),
+        {
+          type: "pie",
+          data: {
+            labels: ["Campaign 1", "Campaign 2", "Campaign 3"],
+            datasets: [
+              {
+                data: [30, 50, 20],
+                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+              },
+            ],
+          },
+        }
+      );
+    </script>
+  </body>
+</html>
