@@ -45,7 +45,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-const toggler = document.getElementById('theme-toggle');
+const toggler = document.getElementById('theme-toggle ');
 
 toggler.addEventListener('change', function () {
     if (this.checked) {

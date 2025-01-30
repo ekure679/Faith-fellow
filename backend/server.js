@@ -5,9 +5,10 @@ app.use(cors());
 app.use(express.static('public'));
 
 // API endpoints
-const user[
+const post =[
   {
-    username: '
+    username:"",
+    title:''
   }
 ]
 
